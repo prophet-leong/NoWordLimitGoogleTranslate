@@ -1,0 +1,5 @@
+C:\Users\jun xiang\Desktop\GoogleTranslator\bin\Release\RavSoft.GoogleTranslator.exe.config
+C:\Users\jun xiang\Desktop\GoogleTranslator\bin\Release\RavSoft.GoogleTranslator.exe
+C:\Users\jun xiang\Desktop\GoogleTranslator\obj\Release\RavSoft.GoogleTranslator.GoogleTranslatorFrm.resources
+C:\Users\jun xiang\Desktop\GoogleTranslator\obj\Release\GoogleTranslator.csproj.GenerateResource.Cache
+C:\Users\jun xiang\Desktop\GoogleTranslator\obj\Release\RavSoft.GoogleTranslator.exe

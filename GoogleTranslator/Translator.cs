@@ -75,6 +75,8 @@ namespace RavSoft.GoogleTranslator
                 DateTime tmStart = DateTime.Now;
                 string translation = string.Empty;
 
+				//Get Romaji Translation first(only works for jap to eng)
+
 				//seperate text by fullstops
 				sourceText = SegmentingSentences(sourceText);
 
@@ -88,15 +90,20 @@ namespace RavSoft.GoogleTranslator
 						sourceText = sourceText.Replace(replace[0], replace[1]);
 					}
 				}
+
+				//seperate this part when cleaning up
 				List<string> temp = new List<string>();
 				
 				while(sourceText.Length > 150)
 				{
 					string tempstr = sourceText.Substring(0,150);
 					int substrSize = tempstr.LastIndexOf(fullstop)+1;
+					if (substrSize == 0)
+						break;
 					tempstr = tempstr.Substring(0,substrSize);
 					temp.Add(tempstr);
 					sourceText = sourceText.Remove(0, tempstr.Length);
+					
 				}
 				temp.Add(sourceText);
 				for (int i = 0; i < temp.Count; ++i)
@@ -111,11 +118,20 @@ namespace RavSoft.GoogleTranslator
 				
 				this.TranslationTime = DateTime.Now - tmStart;
                 return translation;
-				#endregion
             }
+				#endregion
 		string Translating(string sourceText , string sourceLanguage, string targetLanguage)
 		{
-				string translation = string.Empty;
+
+			string[] rawPhrases;
+			string[] translatedPhrases;
+			//string[] romajiTranslation;
+			// get romaji translation first
+			//romajiTranslation = RomajiTranslate.GetPhrases(sourceText);
+
+
+
+			string translation = string.Empty;
 				try
 				{
 					// Download translation
@@ -137,7 +153,7 @@ namespace RavSoft.GoogleTranslator
 						text = text.Remove(0, 2);
 						text = text.Replace(",null,\"" + Translator.LanguageEnumToIdentifier(sourceLanguage) + "\"", "");
 						string[] phrases = text.Split(new[] { "]," }, StringSplitOptions.None);
-						string[] rawPhrases = sourceText.Split(new[] { "\r\n" }, StringSplitOptions.None);
+						rawPhrases = sourceText.Split(new[] { "\r\n" }, StringSplitOptions.None);
 						int s = 2;
 						int len;
 						for (int i = 0;i<phrases.Length;++i)
@@ -149,14 +165,18 @@ namespace RavSoft.GoogleTranslator
 						translation = translation.Replace("\\r", "\r");
 						translation = translation.Replace("\\n", "\n");
 						translation = translation.Replace("\\\"", "\"");
-						string[] translatedPhrases = translation.Split(new[] { "\r\n" }, StringSplitOptions.None);
+
+						translatedPhrases = translation.Split(new[] { "\r\n" }, StringSplitOptions.None);
 
 						int highestValue = Math.Max(translatedPhrases.Length, rawPhrases.Length);
+						//highestValue = Math.Max(highestValue, romajiTranslation.Length);
 						translation = string.Empty;
 						for (int i = 0; i < highestValue; ++i)
 						{
 							
 							//to prevent an exception from happening
+							//if (romajiTranslation.Length > i)
+							//	translation += romajiTranslation[i] + "\r\n";
 							if (rawPhrases.Length > i)
 								translation += rawPhrases[i] + "\r\n";
 							if (translatedPhrases.Length > i)

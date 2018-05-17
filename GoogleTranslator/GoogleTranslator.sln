@@ -4,6 +4,11 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleTranslator", "GoogleTranslator.csproj", "{85533C9A-52BE-47D6-AB12-53FB3B54F999}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{55C8F8B6-7FF8-44FD-A7D2-6465612C1778}"
+	ProjectSection(SolutionItems) = preProject
+		HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll = HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

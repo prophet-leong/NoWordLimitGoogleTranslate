@@ -3,3 +3,12 @@ C:\Users\jun xiang\Desktop\GoogleTranslator\bin\Release\RavSoft.GoogleTranslator
 C:\Users\jun xiang\Desktop\GoogleTranslator\obj\Release\RavSoft.GoogleTranslator.GoogleTranslatorFrm.resources
 C:\Users\jun xiang\Desktop\GoogleTranslator\obj\Release\GoogleTranslator.csproj.GenerateResource.Cache
 C:\Users\jun xiang\Desktop\GoogleTranslator\obj\Release\RavSoft.GoogleTranslator.exe
+C:\Users\jun xiang\Desktop\NoWordLimitGoogleTranslate.git\GoogleTranslator\bin\Release\RavSoft.GoogleTranslator.exe.config
+C:\Users\jun xiang\Desktop\NoWordLimitGoogleTranslate.git\GoogleTranslator\obj\Release\RavSoft.GoogleTranslator.exe
+C:\Users\jun xiang\Desktop\NoWordLimitGoogleTranslate.git\GoogleTranslator\obj\Release\GoogleTranslator.csprojResolveAssemblyReference.cache
+C:\Users\jun xiang\Desktop\NoWordLimitGoogleTranslate.git\GoogleTranslator\obj\Release\RavSoft.GoogleTranslator.GoogleTranslatorFrm.resources
+C:\Users\jun xiang\Desktop\NoWordLimitGoogleTranslate.git\GoogleTranslator\obj\Release\GoogleTranslator.csproj.GenerateResource.Cache
+C:\Users\jun xiang\Desktop\NoWordLimitGoogleTranslate.git\GoogleTranslator\bin\Release\RavSoft.GoogleTranslator.exe
+C:\Users\jun xiang\Desktop\NoWordLimitGoogleTranslate.git\GoogleTranslator\bin\Release\HtmlAgilityPack.dll
+C:\Users\jun xiang\Desktop\NoWordLimitGoogleTranslate.git\GoogleTranslator\bin\Release\HtmlAgilityPack.pdb
+C:\Users\jun xiang\Desktop\NoWordLimitGoogleTranslate.git\GoogleTranslator\bin\Release\HtmlAgilityPack.xml

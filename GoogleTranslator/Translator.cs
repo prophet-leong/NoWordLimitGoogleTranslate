@@ -18,6 +18,9 @@ namespace RavSoft.GoogleTranslator
     {
 		const string fullstop = "。";
 		const int TranslateLimit = 500;
+		RomajiTranslate rTranslate = new RomajiTranslate();
+		
+
         #region Properties
 
             /// <summary>
@@ -74,8 +77,7 @@ namespace RavSoft.GoogleTranslator
                 this.TranslationTime = TimeSpan.Zero;
                 DateTime tmStart = DateTime.Now;
                 string translation = string.Empty;
-
-				//Get Romaji Translation first(only works for jap to eng)
+				rTranslate.GetDatabase();
 
 				//seperate text by fullstops
 				sourceText = SegmentingSentences(sourceText);
@@ -129,9 +131,9 @@ namespace RavSoft.GoogleTranslator
 
 			string[] rawPhrases;
 			string[] translatedPhrases;
-			//string[] romajiTranslation;
+			string[] romajiTranslation;
 			// get romaji translation first
-			//romajiTranslation = RomajiTranslate.GetPhrases(sourceText);
+			romajiTranslation = rTranslate.GetPhrases(sourceText);
 
 
 
@@ -173,14 +175,13 @@ namespace RavSoft.GoogleTranslator
 						translatedPhrases = translation.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 						
 						int highestValue = Math.Max(translatedPhrases.Length, rawPhrases.Length);
-						//highestValue = Math.Max(highestValue, romajiTranslation.Length);
 						translation = string.Empty;
 						for (int i = 0; i < highestValue; ++i)
 						{
 							
 							//to prevent an exception from happening
-							//if (romajiTranslation.Length > i)
-							//	translation += romajiTranslation[i] + "\r\n";
+							if (romajiTranslation.Length > i)
+								translation += romajiTranslation[i] + "\r\n";
 							if (rawPhrases.Length > i)
 								translation += rawPhrases[i] + "\r\n";
 							if (translatedPhrases.Length > i)
